@@ -10,3 +10,7 @@ $ git show-branch
  +* [my_branch_1] add text
  +* [my_branch_1^] my_branch1_firstcommit    
 ++* [main] firstcommit
+
+こっちのほうがいいっぽい
+$ git show-branch | grep '*' | grep -v "$(git rev-parse --abbrev-ref HEAD)" | head -1 | awk -F'[]~^[]' '{print $2}'
+my_branch_1
