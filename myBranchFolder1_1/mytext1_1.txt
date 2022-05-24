@@ -1,1 +1,12 @@
 my_branch_1上でcreate branch してみた。
+git show-branch してみると
+
+$ git show-branch 
+! [main] firstcommit
+ ! [my_branch_1] add text
+  * [my_branch_1_1] my_branch_1_1 firstcommit → このように派生元は my_branch_1 である。
+---
+  * [my_branch_1_1] my_branch_1_1 firstcommit
+ +* [my_branch_1] add text
+ +* [my_branch_1^] my_branch1_firstcommit    
+++* [main] firstcommit
