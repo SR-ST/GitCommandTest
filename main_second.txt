@@ -1,0 +1,4 @@
+mainブランチのまま編集してcreate branch してみる。
+編集内容が残ることが分かった。
+
+内容を書き換えて git commit --amend と git push -f してみる。
