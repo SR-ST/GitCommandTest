@@ -3,28 +3,28 @@ mainブランチのまま編集してcreate branch してみる。
 
 内容を書き換えて git commit --amend と git push -f してみる。
 
-Owner@DESKTOP-KF2IU78 MINGW64 /d/GithubTest/GitCommandTest (my_branch_3)
+Owner@DESKTOP-XXXXXXX MINGW64 /d/GithubTest/GitCommandTest (my_branch_3)
 $ git log --oneline
   2a48783 (HEAD -> my_branch_3, origin/my_branch_3) 編集状態を残して新しいブランチができる
   160b1d1 (origin/main, my_branch_1, main) my_branch_2 first commit (#3)
   0595d47 Merge pull request #2 from SR-ST/my_branch_1_1
   以下略
 
-Owner@DESKTOP-KF2IU78 MINGW64 /d/GithubTest/GitCommandTest (my_branch_3)
+Owner@DESKTOP-XXXXXXX MINGW64 /d/GithubTest/GitCommandTest (my_branch_3)
 $ git commit --amend -m 'amendでコミット'
   [my_branch_3 d3c7813] amendでコミット
    Date: Tue May 31 11:34:53 2022 +0900
    1 file changed, 4 insertions(+)
    create mode 100644 main_second.txt
 
-Owner@DESKTOP-KF2IU78 MINGW64 /d/GithubTest/GitCommandTest (my_branch_3)
+Owner@DESKTOP-XXXXXXX MINGW64 /d/GithubTest/GitCommandTest (my_branch_3)
 $ git log --oneline
   d3c7813 (HEAD -> my_branch_3) amendでコミット
   160b1d1 (origin/main, my_branch_1, main) my_branch_2 first commit (#3)
   0595d47 Merge pull request #2 from SR-ST/my_branch_1_1
   以下略
 
-Owner@DESKTOP-KF2IU78 MINGW64 /d/GithubTest/GitCommandTest (my_branch_3|MERGING)
+Owner@DESKTOP-XXXXXXX MINGW64 /d/GithubTest/GitCommandTest (my_branch_3|MERGING)
 $ git push -f -u origin my_branch_3
   Enumerating objects: 4, done.
   Counting objects: 100% (4/4), done.
@@ -46,3 +46,4 @@ commit ID が 2a48783 → d3c7813に変わった。
 3回プッシュして3回amendしてみる。
 消せるのは直前のコミットのみであることが分かった。
 たぶんそっちはrebert。
+
