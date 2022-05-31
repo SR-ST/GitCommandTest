@@ -1,0 +1,48 @@
+mainブランチのまま編集してcreate branch してみる。
+編集内容が残ることが分かった。
+
+内容を書き換えて git commit --amend と git push -f してみる。
+
+Owner@DESKTOP-XXXXXXX MINGW64 /d/GithubTest/GitCommandTest (my_branch_3)
+$ git log --oneline
+  2a48783 (HEAD -> my_branch_3, origin/my_branch_3) 編集状態を残して新しいブランチができる
+  160b1d1 (origin/main, my_branch_1, main) my_branch_2 first commit (#3)
+  0595d47 Merge pull request #2 from SR-ST/my_branch_1_1
+  以下略
+
+Owner@DESKTOP-XXXXXXX MINGW64 /d/GithubTest/GitCommandTest (my_branch_3)
+$ git commit --amend -m 'amendでコミット'
+  [my_branch_3 d3c7813] amendでコミット
+   Date: Tue May 31 11:34:53 2022 +0900
+   1 file changed, 4 insertions(+)
+   create mode 100644 main_second.txt
+
+Owner@DESKTOP-XXXXXXX MINGW64 /d/GithubTest/GitCommandTest (my_branch_3)
+$ git log --oneline
+  d3c7813 (HEAD -> my_branch_3) amendでコミット
+  160b1d1 (origin/main, my_branch_1, main) my_branch_2 first commit (#3)
+  0595d47 Merge pull request #2 from SR-ST/my_branch_1_1
+  以下略
+
+Owner@DESKTOP-XXXXXXX MINGW64 /d/GithubTest/GitCommandTest (my_branch_3|MERGING)
+$ git push -f -u origin my_branch_3
+  Enumerating objects: 4, done.
+  Counting objects: 100% (4/4), done.
+  Delta compression using up to 8 threads
+  Compressing objects: 100% (3/3), done.
+  Writing objects: 100% (3/3), 453 bytes | 453.00 KiB/s, done.
+  Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+  remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+  To github.com:SR-ST/GitCommandTest.git
+   + 2a48783...d3c7813 my_branch_3 -> my_branch_3 (forced update)
+  branch 'my_branch_3' set up to track 'origin/my_branch_3'.
+
+プルリクエストに表示された Commits の数は1のまま、
+commit ID が 2a48783 → d3c7813に変わった。
+
+コメントもd3c7813のコメントに上書きされてしまったので、
+コメントを変えたくないときは消しちゃうほうのコミットと同じコメントにすると良いのね。
+
+3回プッシュして3回amendしてみる。
+消せるのは直前のコミットのみであることが分かった。
+たぶんそっちはrebert。
