@@ -47,7 +47,4 @@ commit ID が 2a48783 → d3c7813に変わった。
 消せるのは直前のコミットのみであることが分かった。
 たぶんそっちはrebert。
 
-second
-third
-
-あじゃぱ
+first commit
